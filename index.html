@@ -244,7 +244,7 @@
         <li><span class="chev">&rsaquo;</span><b>Minor:</b> Finance</li>
         <li><span class="chev">&rsaquo;</span><b>Citizenship:</b> United States</li>
       </ul>
-      <p class="about-note">Currently an ML Engineer at Triomics and a researcher at Duke, with experience spanning multi-agent LLM pipelines, RAG systems, biomedical data engineering, and systematic trading. Background in competitive math (AIME, Math Madness), debate, and tennis.</p>
+      <p class="about-note">Currently an ML Engineer Intern at Triomics and a research assistant at Duke, with work spanning LLM extraction pipelines, RAG systems, computational disease modeling, genomic data engineering, and systematic trading. Background in competitive math (AIME, Math Madness), debate, and tennis.</p>
     </div>
   </div>
 </section>
@@ -285,7 +285,7 @@
         <div class="timeline">
           <div class="item">
             <h4>B.S. Computer Science &amp; Mathematics</h4>
-            <span class="when">2024 &ndash; 2028</span>
+            <span class="when">2025 &ndash; 2028</span>
             <div class="org">Duke University &middot; Minor in Finance &middot; GPA 3.83</div>
             <ul>
               <li>National Merit Scholar, 2025</li>
@@ -325,40 +325,73 @@
         <h3>Experience</h3>
         <div class="timeline">
           <div class="item">
-            <h4>ML Engineer</h4>
+            <h4>ML Engineer Intern</h4>
             <span class="when">Jun 2026 &ndash; Present</span>
-            <div class="org">Triomics</div>
-            <ul><li>Machine learning engineering for clinical/healthcare data workflows.</li></ul>
+            <div class="org">Triomics &middot; New York, NY</div>
+            <ul>
+              <li>Redesigned the cancer-patient-to-clinical-trial matching pipeline in Python and FastAPI, replacing brute-force criteria evaluation with a decision-tree routing structure modeled on clinical trial flowcharts, cutting per-patient compute from O(trials) to a single tree traversal.</li>
+              <li>Built an LLM-based extraction pipeline (Anthropic and OpenAI APIs) parsing unstructured clinical notes, pathology, and lab results into schema-validated patient profiles with Pydantic.</li>
+              <li>Added pytest regression testing and containerized the full system with Docker.</li>
+            </ul>
           </div>
           <div class="item">
-            <h4>Research &ndash; Multi-Agent LLM Pipelines</h4>
-            <span class="when">Apr 2026 &ndash; Present</span>
-            <div class="org">Krenzer Lab @ Duke Sanford</div>
-            <ul><li>Built a multi-agent LLM pipeline (Python, LangChain) for biological experiment design, cutting planning time from weeks to minutes.</li></ul>
-          </div>
-          <div class="item">
-            <h4>Cybersecurity &amp; AI Infrastructure</h4>
+            <h4>Research Assistant</h4>
             <span class="when">May 2026 &ndash; Present</span>
-            <div class="org">Duke University OIT</div>
-            <ul><li>Remediated 15+ vulnerabilities (RBAC, TLS, AES-256, CI/CD hardening) and built the DocRAG platform (Python, TypeScript, PostgreSQL, AWS).</li></ul>
+            <div class="org">Hickey Lab @ Duke University School of Medicine</div>
+            <ul>
+              <li>Building ML-driven models of early-stage influenza infection dynamics in Python, pairing neural-network parameter estimation with mathematical simulation across 10+ infection scenarios.</li>
+              <li>Engineered pipelines over 1,000+ patient trajectories, validating simulation outputs against clinical data with ~85% predictive accuracy.</li>
+              <li>Designed modular simulation software that cut model iteration time from ~6 hours to ~10 minutes across 50+ parameter configurations.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h4>Research Assistant</h4>
+            <span class="when">Apr 2026 &ndash; Present</span>
+            <div class="org">Krenzer Lab @ Duke University School of Public Policy</div>
+            <ul>
+              <li>Designed role-based access control across 3+ open data repositories, enforcing least-privilege policies for 500+ researchers with full FERPA compliance.</li>
+              <li>Ran security audits that surfaced and remediated 15+ vulnerabilities including SQL injection, broken access controls, and unencrypted data transmission.</li>
+              <li>Built real-time access-log analysis in Python, cutting incident detection time by ~40%, with AES-256 at rest and TLS in transit across 10+ datasets.</li>
+            </ul>
           </div>
           <div class="item">
             <h4>Data Analyst</h4>
             <span class="when">Aug 2025 &ndash; Present</span>
-            <div class="org">Duke University Baseball</div>
-            <ul><li>Statistical analysis of 3+ seasons and 30+ variables using NumPy, pandas, SciPy, and statsmodels.</li></ul>
+            <div class="org">Duke University Baseball &middot; Durham, NC</div>
+            <ul>
+              <li>Built end-to-end Python and SQL pipelines across 10+ batting, pitching, and fielding metrics, cutting manual preprocessing ~50% and enabling same-day turnaround.</li>
+              <li>Built dashboards tracking 30+ in-game variables (launch angle, spin rate, defensive positioning) for a coaching staff of 8+.</li>
+              <li>Trained predictive models on 3+ seasons of data that inform lineup decisions and opponent-specific defensive alignments.</li>
+            </ul>
           </div>
           <div class="item">
-            <h4>Data / MLOps Engineer</h4>
+            <h4>Research Assistant</h4>
             <span class="when">Apr 2025 &ndash; Jun 2026</span>
-            <div class="org">Cohen Lab @ Duke School of Medicine</div>
-            <ul><li>Python/Java pipelines over 10M+ NIH records and 500K+ patients; cut runtime from 8 hours to 90 minutes.</li></ul>
+            <div class="org">Cohen Lab @ Duke University School of Medicine</div>
+            <ul>
+              <li>Built ML-driven genomic pipelines in Python and R over 10M+ variants from the NIH All of Us program, cutting per-cohort runtime from ~8 hours to under 90 minutes.</li>
+              <li>Designed a variant prioritization system using gene-constraint metrics (LOEUF, pLI), functional annotations, and allele frequencies to rank candidates across 500K+ patient records.</li>
+              <li>Surfaced 200+ high-confidence at-risk individuals across 3+ disease cohorts for clinical follow-up.</li>
+            </ul>
           </div>
           <div class="item">
-            <h4>Software Engineer Intern</h4>
-            <span class="when">Jun 2025 &ndash; Aug 2025</span>
-            <div class="org">Hyperspace Ventures</div>
-            <ul><li>Built a React/TypeScript SaaS serving 2000+ users; cut task completion time 35%.</li></ul>
+            <h4>Software Engineer</h4>
+            <span class="when">Jun 2024 &ndash; Aug 2024</span>
+            <div class="org">Hyperspace Ventures &middot; Cary, NC</div>
+            <ul>
+              <li>Shipped front-end features for a healthcare platform serving 2,000+ patients, redesigning intake and navigation to cut task completion time ~35%.</li>
+              <li>Ran A/B tests across 2,000+ users on 3 navigation variants, lifting session depth ~25% and reducing drop-off ~30%.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h4>Software Engineer</h4>
+            <span class="when">May 2023 &ndash; Jun 2023</span>
+            <div class="org">Wasatch Photonics &middot; Cary, NC</div>
+            <ul>
+              <li>Implemented an SPI communication protocol in C for Airbus optical systems, achieving sub-millisecond latency between spectrometer components and external control modules.</li>
+              <li>Built a real-time strip-chart tool in Python (1kHz sampling) that cut optical diagnostic time from ~20 minutes to under 5 during live testing.</li>
+              <li>Integrated software with 3-axis precision positioning systems, reducing false-positive failure rates ~20% and improving production-testing throughput.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -376,27 +409,27 @@
     <div class="proj-grid">
       <div class="card">
         <span class="tag">AI Infrastructure</span>
-        <h4>DocRAG</h4>
-        <p>A retrieval-augmented generation platform deployed at two Duke labs. Pushed retrieval accuracy from 60% to 90% at ~$0.002 per document, built ~95% solo.</p>
-        <div class="stack"><span>LangChain</span><span>ChromaDB</span><span>FastAPI</span><span>React</span><span>PostgreSQL</span></div>
+        <h4>DocRAG &ndash; Research Assistant AI</h4>
+        <p>A full-stack RAG assistant indexing 500+ academic papers with OpenAI embeddings and ChromaDB, cutting literature search from ~30 minutes to under 60 seconds. LangChain retrieval feeds top-k context to GPT-4 for citation-grounded answers at ~90% relevance across 200+ test queries, ~$0.002 per document.</p>
+        <div class="stack"><span>LangChain</span><span>ChromaDB</span><span>FastAPI</span><span>React</span><span>OpenAI</span></div>
       </div>
       <div class="card">
         <span class="tag">Quant / ML</span>
         <h4>Trader Bot</h4>
-        <p>Systematic equities/ETF strategy with walk-forward backtesting and real risk controls (position limits, stop losses, kill switch). Paper trading only, no live capital.</p>
+        <p>An algorithmic trading platform that engineers time-series features, trains an XGBoost direction model, and executes via the Alpaca API. Walk-forward backtesting with transaction-cost modeling reports CAGR, Sharpe, and max drawdown, alongside risk controls: position limits, gross exposure caps, stop losses, and daily-loss kill switch. Paper trading only.</p>
         <div class="stack"><span>XGBoost</span><span>Alpaca API</span><span>Docker</span><span>Python</span></div>
       </div>
       <div class="card">
-        <span class="tag">Applied LLMs</span>
-        <h4>Multi-Agent Experiment Pipeline</h4>
-        <p>A benchmarked, regression-tested multi-agent LLM system for biological experiment design. Cut runtime from 215s to 71.6s on a 10-question set and projected ~82% API cost reduction.</p>
-        <div class="stack"><span>LangChain</span><span>Multi-Agent</span><span>LLM Evals</span><span>Python</span></div>
+        <span class="tag">Computational Biology</span>
+        <h4>Influenza Infection Modeling</h4>
+        <p>ML-driven models of early-stage influenza dynamics pairing neural-network parameter estimation with mathematical simulation across 10+ scenarios. Validated against 1,000+ patient trajectories at ~85% predictive accuracy; cut model iteration from ~6 hours to ~10 minutes.</p>
+        <div class="stack"><span>Python</span><span>Neural Networks</span><span>Simulation</span><span>SciPy</span></div>
       </div>
       <div class="card">
         <span class="tag">Data Engineering</span>
-        <h4>Biomedical Records Pipeline</h4>
-        <p>ETL over 10M+ NIH records and 500K+ patients across multiple disease cohorts, with runtime optimized from 8 hours down to 90 minutes.</p>
-        <div class="stack"><span>Python</span><span>Java</span><span>ETL</span><span>SQL</span></div>
+        <h4>Genomic Variant Pipeline</h4>
+        <p>ML-driven genomic pipelines over 10M+ variants from the NIH All of Us program, ranking loss-of-function candidates by gene-constraint metrics (LOEUF, pLI) across 500K+ records. Runtime cut from ~8 hours to under 90 minutes; flagged 200+ at-risk individuals.</p>
+        <div class="stack"><span>Python</span><span>R</span><span>ETL</span><span>SQL</span></div>
       </div>
     </div>
   </div>
