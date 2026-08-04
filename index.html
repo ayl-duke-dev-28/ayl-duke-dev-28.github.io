@@ -125,7 +125,8 @@
   .timeline{padding-left:22px;border-left:2px solid #cde3f2;margin-bottom:34px}
   .item{position:relative;padding-bottom:22px}
   .item:before{content:"";position:absolute;left:-30px;top:2px;width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid var(--accent)}
-  .item h4{font-size:16px;text-transform:uppercase;font-weight:700;color:#050d18;letter-spacing:.4px}
+  .item h4{font-size:19px;text-transform:uppercase;font-weight:700;color:#050d18;letter-spacing:.4px}
+  .item .pos{font-family:"Raleway",sans-serif;font-weight:600;font-size:14.5px;color:#41576e;margin-top:3px}
   .item .when{display:inline-block;background:#e4edf4;color:#173b6c;font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;margin:6px 0 8px;font-family:"Poppins"}
   .item .org{font-style:italic;color:#555;margin-bottom:8px;font-size:14px}
   .item ul{padding-left:18px}
@@ -284,9 +285,10 @@
         <h3>Education</h3>
         <div class="timeline">
           <div class="item">
-            <h4>B.S. Computer Science &amp; Mathematics</h4>
+            <h4>Duke University</h4>
+            <div class="pos">B.S. Computer Science &amp; Mathematics &middot; Minor in Finance</div>
             <span class="when">2025 &ndash; 2028</span>
-            <div class="org">Duke University &middot; Minor in Finance &middot; GPA 3.83</div>
+            <div class="org">Durham, NC &middot; GPA 3.83</div>
           </div>
         </div>
 
@@ -318,19 +320,22 @@
         <h3>Experience</h3>
         <div class="timeline">
           <div class="item">
-            <h4>Software Engineer Intern</h4>
+            <h4>Citadel</h4>
+            <div class="pos">Software Engineer Intern</div>
             <span class="when">Summer 2027</span>
-            <div class="org">Citadel &middot; Incoming</div>
+            <div class="org">New York, NY</div>
           </div>
           <div class="item">
-            <h4>Software Engineer Intern</h4>
+            <h4>Intel</h4>
+            <div class="pos">Software Engineer Intern</div>
             <span class="when">Fall 2026</span>
-            <div class="org">Intel &middot; Incoming</div>
+            <div class="org">Folsom, CA</div>
           </div>
           <div class="item">
-            <h4>ML Engineer Intern</h4>
+            <h4>Triomics</h4>
+            <div class="pos">ML Engineer Intern</div>
             <span class="when">Jun 2026 &ndash; Present</span>
-            <div class="org">Triomics &middot; New York, NY</div>
+            <div class="org">New York, NY</div>
             <ul>
               <li>Redesigned the cancer-patient-to-clinical-trial matching pipeline in Python and FastAPI, replacing brute-force criteria evaluation with a decision-tree routing structure modeled on clinical trial flowcharts, cutting per-patient compute from O(trials) to a single tree traversal.</li>
               <li>Built an LLM-based extraction pipeline (Anthropic and OpenAI APIs) parsing unstructured clinical notes, pathology, and lab results into schema-validated patient profiles with Pydantic.</li>
@@ -338,19 +343,10 @@
             </ul>
           </div>
           <div class="item">
-            <h4>Research Assistant</h4>
-            <span class="when">May 2026 &ndash; Aug 2026</span>
-            <div class="org">Hickey Lab @ Duke University School of Medicine</div>
-            <ul>
-              <li>Built ML-driven models of early-stage influenza infection dynamics in Python, pairing neural-network parameter estimation with mathematical simulation across 10+ infection scenarios.</li>
-              <li>Engineered pipelines over 1,000+ patient trajectories, validating simulation outputs against clinical data with ~85% predictive accuracy.</li>
-              <li>Designed modular simulation software that cut model iteration time from ~6 hours to ~10 minutes across 50+ parameter configurations.</li>
-            </ul>
-          </div>
-          <div class="item">
-            <h4>Research Assistant</h4>
+            <h4>Krenzer Lab</h4>
+            <div class="pos">Research Assistant</div>
             <span class="when">Apr 2026 &ndash; Present</span>
-            <div class="org">Krenzer Lab @ Duke University School of Public Policy</div>
+            <div class="org">Duke University School of Public Policy &middot; Durham, NC</div>
             <ul>
               <li>Designed role-based access control across 3+ open data repositories, enforcing least-privilege policies for 500+ researchers with full FERPA compliance.</li>
               <li>Ran security audits that surfaced and remediated 15+ vulnerabilities including SQL injection, broken access controls, and unencrypted data transmission.</li>
@@ -358,9 +354,10 @@
             </ul>
           </div>
           <div class="item">
-            <h4>Data Analyst</h4>
+            <h4>Duke University Baseball</h4>
+            <div class="pos">Data Analyst</div>
             <span class="when">Aug 2025 &ndash; Present</span>
-            <div class="org">Duke University Baseball &middot; Durham, NC</div>
+            <div class="org">Durham, NC</div>
             <ul>
               <li>Built end-to-end Python and SQL pipelines across 10+ batting, pitching, and fielding metrics, cutting manual preprocessing ~50% and enabling same-day turnaround.</li>
               <li>Built dashboards tracking 30+ in-game variables (launch angle, spin rate, defensive positioning) for a coaching staff of 8+.</li>
@@ -368,9 +365,21 @@
             </ul>
           </div>
           <div class="item">
-            <h4>Research Assistant</h4>
+            <h4>Hickey Lab</h4>
+            <div class="pos">Research Assistant</div>
+            <span class="when">May 2026 &ndash; Aug 2026</span>
+            <div class="org">Duke University School of Medicine &middot; Durham, NC</div>
+            <ul>
+              <li>Built ML-driven models of early-stage influenza infection dynamics in Python, pairing neural-network parameter estimation with mathematical simulation across 10+ infection scenarios.</li>
+              <li>Engineered pipelines over 1,000+ patient trajectories, validating simulation outputs against clinical data with ~85% predictive accuracy.</li>
+              <li>Designed modular simulation software that cut model iteration time from ~6 hours to ~10 minutes across 50+ parameter configurations.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h4>Cohen Lab</h4>
+            <div class="pos">Research Assistant</div>
             <span class="when">Apr 2025 &ndash; Jun 2026</span>
-            <div class="org">Cohen Lab @ Duke University School of Medicine</div>
+            <div class="org">Duke University School of Medicine &middot; Durham, NC</div>
             <ul>
               <li>Built ML-driven genomic pipelines in Python and R over 10M+ variants from the NIH All of Us program, cutting per-cohort runtime from ~8 hours to under 90 minutes.</li>
               <li>Designed a variant prioritization system using gene-constraint metrics (LOEUF, pLI), functional annotations, and allele frequencies to rank candidates across 500K+ patient records.</li>
@@ -378,18 +387,20 @@
             </ul>
           </div>
           <div class="item">
-            <h4>Software Engineer</h4>
+            <h4>Hyperspace Ventures</h4>
+            <div class="pos">Software Engineer</div>
             <span class="when">Jun 2024 &ndash; Aug 2024</span>
-            <div class="org">Hyperspace Ventures &middot; Cary, NC</div>
+            <div class="org">Cary, NC</div>
             <ul>
               <li>Shipped front-end features for a healthcare platform serving 2,000+ patients, redesigning intake and navigation to cut task completion time ~35%.</li>
               <li>Ran A/B tests across 2,000+ users on 3 navigation variants, lifting session depth ~25% and reducing drop-off ~30%.</li>
             </ul>
           </div>
           <div class="item">
-            <h4>Software Engineer</h4>
+            <h4>Wasatch Photonics</h4>
+            <div class="pos">Software Engineer</div>
             <span class="when">May 2023 &ndash; Jun 2023</span>
-            <div class="org">Wasatch Photonics &middot; Cary, NC</div>
+            <div class="org">Cary, NC</div>
             <ul>
               <li>Implemented an SPI communication protocol in C for Airbus optical systems, achieving sub-millisecond latency between spectrometer components and external control modules.</li>
               <li>Built a real-time strip-chart tool in Python (1kHz sampling) that cut optical diagnostic time from ~20 minutes to under 5 during live testing.</li>
