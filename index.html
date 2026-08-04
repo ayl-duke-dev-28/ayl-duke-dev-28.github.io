@@ -95,6 +95,7 @@
   #hero h1{font-size:60px;font-weight:700;color:#fff;line-height:1.1}
   #hero .typed-wrap{font-size:26px;color:#fff;margin-top:14px;font-family:"Poppins";font-weight:400}
   #hero .typed{color:var(--accent-2);border-right:2px solid var(--accent-2);padding-right:2px}
+  #hero .hero-role{color:var(--accent-2)}
   #hero .lead{color:#c7d3df;max-width:620px;margin-top:18px;font-size:16px}
   .btn-cv{
     display:inline-block;margin-top:26px;padding:11px 26px;border:2px solid var(--accent);
@@ -129,6 +130,7 @@
   .item .pos{font-family:"Raleway",sans-serif;font-weight:600;font-size:14.5px;color:#41576e;margin-top:3px}
   .item .when{display:inline-block;background:#e4edf4;color:#173b6c;font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;margin:6px 0 8px;font-family:"Poppins"}
   .item .org{font-style:italic;color:#555;margin-bottom:8px;font-size:14px}
+  .item .desc{color:#444;font-size:14.5px;margin-top:2px}
   .item ul{padding-left:18px}
   .item li{font-size:14.5px;color:#444;margin-bottom:4px}
 
@@ -217,8 +219,8 @@
 <section id="hero">
   <div class="hero-inner">
     <h1>Alex Liu</h1>
-    <div class="typed-wrap">I'm a <span class="typed" id="typed"></span></div>
-    <p class="lead">CS &amp; Math student at Duke building machine learning systems, AI infrastructure, and quantitative tools. I like shipping real, deployed software and being honest about what the numbers can and can't say.</p>
+    <div class="typed-wrap">I'm a <span class="hero-role">Software Engineer</span></div>
+    <p class="lead">I have experience with machine learning, AI infrastructure, full-stack development, and quantitative research.</p>
     <!-- To enable the CV button, drop a resume.pdf next to this file (or link a Google Drive URL). -->
     <a class="btn-cv" href="#contact">Get in touch</a>
   </div>
@@ -234,21 +236,16 @@
       <p>Rising junior at Duke University double-majoring in Computer Science and Mathematics with a Finance minor. I work across ML engineering, AI/RAG infrastructure, and quantitative research.</p>
     </div>
     <div class="about-grid">
-      <h3>Machine Learning Engineer &amp; Builder</h3>
-      <div class="role">CS + Math @ Duke University &middot; Finance minor</div>
       <ul>
-        <li><span class="chev">&rsaquo;</span><b>Degree:</b> B.S. Computer Science &amp; Mathematics</li>
+        <li><span class="chev">&rsaquo;</span><b>Degree:</b> B.S. Computer Science &amp; Mathematics &middot; Minor in Finance</li>
         <li><span class="chev">&rsaquo;</span><b>School:</b> Duke University</li>
         <li><span class="chev">&rsaquo;</span><b>Graduating:</b> May 2028</li>
-        <li><span class="chev">&rsaquo;</span><b>GPA:</b> 3.83</li>
       </ul>
       <ul>
+        <li><span class="chev">&rsaquo;</span><b>GPA:</b> 3.83</li>
         <li><span class="chev">&rsaquo;</span><b>Email:</b> <a href="mailto:ayliu.636@gmail.com">ayliu.636@gmail.com</a></li>
         <li><span class="chev">&rsaquo;</span><b>GitHub:</b> <a href="https://github.com/ayl-duke-dev-28" target="_blank" rel="noopener">ayl-duke-dev-28</a></li>
-        <li><span class="chev">&rsaquo;</span><b>Minor:</b> Finance</li>
-        <li><span class="chev">&rsaquo;</span><b>Citizenship:</b> United States</li>
       </ul>
-      <p class="about-note">Currently an ML Engineer Intern at Triomics and a research assistant at Duke, with work spanning LLM extraction pipelines, RAG systems, computational disease modeling, genomic data engineering, and systematic trading. Background in competitive math (AIME, Math Madness), debate, and tennis.</p>
     </div>
   </div>
 </section>
@@ -377,6 +374,7 @@
             <div class="pos">Software Engineer Intern</div>
             <span class="when">Summer 2027</span>
             <div class="org">New York, NY</div>
+            <div class="desc">Fixed Income &amp; Macro</div>
           </div>
           <div class="item">
             <h4>Intel</h4>
@@ -499,22 +497,6 @@
 <footer>&copy; <span id="year"></span> Alex Liu &middot; Built with plain HTML &amp; CSS on GitHub Pages</footer>
 
 <script>
-  // ---- Rotating typed roles ----
-  (function(){
-    var roles=["Machine Learning Engineer","AI Infrastructure Engineer","Quant / SWE","Full-Stack Developer"];
-    var el=document.getElementById("typed");
-    var r=0,c=0,deleting=false;
-    function tick(){
-      var word=roles[r];
-      el.textContent=word.substring(0,c);
-      if(!deleting && c<word.length){c++;setTimeout(tick,90);}
-      else if(!deleting && c===word.length){deleting=true;setTimeout(tick,1600);}
-      else if(deleting && c>0){c--;setTimeout(tick,45);}
-      else{deleting=false;r=(r+1)%roles.length;setTimeout(tick,300);}
-    }
-    tick();
-  })();
-
   // ---- Animate skill bars on scroll ----
   (function(){
     var bars=document.querySelectorAll(".bar span");
