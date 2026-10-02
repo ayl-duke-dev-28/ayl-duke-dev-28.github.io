@@ -92,6 +92,9 @@
   @media (prefers-reduced-motion: reduce) { .tl, .tl::before { opacity: 1; transform: none; transition: none; } }
 
   /* Projects */
+  .soon { min-height: calc(100vh - 200px); display: grid; place-items: center; text-align: center; }
+  .soon h2 { font-size: 84px; letter-spacing: -1px; }
+  @media (max-width: 520px) { .soon h2 { font-size: 54px; } }
   .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 20px; }
   .proj { display: flex; flex-direction: column; text-decoration: none; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 26px; transition: transform .2s, border-color .2s, box-shadow .2s; }
   .proj:hover { transform: translateY(-3px); border-color: #cfc7b9; box-shadow: 0 10px 28px rgba(60,50,30,.08); }
@@ -261,11 +264,9 @@
 
   <!-- PROJECTS -->
   <section id="p-projects" class="page">
-    <div class="page-head">
-      <h2>Projects</h2>
-      <p class="lede">Click any project to see it on GitHub.</p>
+    <div class="soon">
+      <h2>Coming Soon</h2>
     </div>
-    <div class="proj-grid" id="proj-grid"></div>
   </section>
 
   <!-- HOBBIES -->
@@ -350,7 +351,9 @@
       link: 'https://github.com/ayl-duke-dev-28/tutoring-assistant',
       desc: "An AI tutoring app that generates practice questions that adapt to each student." },
   ];
-  document.getElementById('proj-grid').innerHTML = projects.map(p => `
+  // Projects page is "Coming Soon" for now; add <div class="proj-grid" id="proj-grid"></div> back to show these.
+  const projGrid = document.getElementById('proj-grid');
+  if (projGrid) projGrid.innerHTML = projects.map(p => `
     <a class="proj" href="${p.link}" target="_blank" rel="noopener">
       <h4>${esc(p.title)}</h4>
       <p>${esc(p.desc)}</p>
