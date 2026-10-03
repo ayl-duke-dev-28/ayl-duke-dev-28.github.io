@@ -92,10 +92,9 @@
   @media (prefers-reduced-motion: reduce) { .tl, .tl::before { opacity: 1; transform: none; transition: none; } }
 
   /* Projects */
-  .soon { min-height: calc(100vh - 200px); display: grid; place-items: center; text-align: center; }
-  .soon h2 { font-size: 84px; letter-spacing: -1px; }
-  @media (max-width: 520px) { .soon h2 { font-size: 54px; } }
   .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 20px; }
+  .shelf-head.proj-past { margin-top: 60px; }
+  div.proj:hover { transform: none; box-shadow: none; border-color: var(--line); }
   .proj { display: flex; flex-direction: column; text-decoration: none; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 26px; transition: transform .2s, border-color .2s, box-shadow .2s; }
   .proj:hover { transform: translateY(-3px); border-color: #cfc7b9; box-shadow: 0 10px 28px rgba(60,50,30,.08); }
   .proj h4 { font-family: var(--serif); font-weight: 500; font-size: 24px; }
@@ -264,9 +263,13 @@
 
   <!-- PROJECTS -->
   <section id="p-projects" class="page">
-    <div class="soon">
-      <h2>Coming Soon</h2>
+    <div class="page-head">
+      <h2>Projects</h2>
     </div>
+    <h3 class="shelf-head">What I'm working on</h3>
+    <div class="proj-grid" id="proj-current"></div>
+    <h3 class="shelf-head proj-past">Projects I've worked on</h3>
+    <div class="proj-grid" id="proj-past"></div>
   </section>
 
   <!-- HOBBIES -->
@@ -330,36 +333,23 @@
 <script>
   const esc = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;');
 
-  // ---- Projects: edit text / GitHub links here ----
-  const projects = [
-    { title: 'DocRAG: Research Assistant AI', built: 'Python, React',
-      link: 'https://github.com/ayl-duke-dev-28/DocRAG',
-      desc: "A research assistant that searches academic papers and answers questions with citations." },
-    { title: 'Even Flop', built: 'C++, JavaScript',
-      link: 'https://github.com/ayl-duke-dev-28/even-flop',
-      desc: "Finds the Texas Hold'em flops that split two starting hands closest to a coin flip." },
-    { title: 'Trader Bot', built: 'Python',
-      link: 'https://github.com/ayl-duke-dev-28/trader-bot',
-      desc: "A machine learning trading bot with walk-forward backtesting, run on paper trading only." },
-    { title: 'Multi-Agent LLM Pipeline', built: 'Python',
-      link: 'https://github.com/ayl-duke-dev-28/multi-agent-pipeline',
-      desc: "A research pipeline of coordinated LLM agents, optimized to run faster and cheaper." },
-    { title: 'Incident Response Agent', built: 'Python',
-      link: 'https://github.com/ayl-duke-dev-28/incident-response',
-      desc: "An autonomous AI system that responds to production outages." },
-    { title: 'Tutoring Assistant', built: 'React, Python',
-      link: 'https://github.com/ayl-duke-dev-28/tutoring-assistant',
-      desc: "An AI tutoring app that generates practice questions that adapt to each student." },
+  // ---- Projects: edit here. Add link: 'https://github.com/...' to make a card clickable ----
+  const currentProjects = [
+    { title: 'CUDA Attention Kernel', desc: 'A custom GPU attention kernel written from scratch in CUDA, benchmarked against PyTorch and FlashAttention.' },
+    { title: 'Options Pricing & Greeks Engine', desc: 'A C++ engine for pricing options and computing Greeks using Black-Scholes, binomial trees, and Monte Carlo simulation.' },
   ];
-  // Projects page is "Coming Soon" for now; add <div class="proj-grid" id="proj-grid"></div> back to show these.
-  const projGrid = document.getElementById('proj-grid');
-  if (projGrid) projGrid.innerHTML = projects.map(p => `
-    <a class="proj" href="${p.link}" target="_blank" rel="noopener">
-      <h4>${esc(p.title)}</h4>
-      <p>${esc(p.desc)}</p>
-      <div class="built">${esc(p.built)}</div>
-      <div class="gh">View on GitHub ↗</div>
-    </a>`).join('');
+  const pastProjects = [
+    { title: 'Clinical Trial Matching', desc: 'Contributed to a system that matches cancer patients to clinical trials, deployed at 4 of the top 10 US cancer hospitals.' },
+    { title: 'DocRAG', desc: 'An AI research assistant that answers questions over large document collections using retrieval-augmented generation.' },
+    { title: 'Autonomous Incident Response', desc: 'An agent that detects, diagnoses, and responds to production failures without human intervention.' },
+    { title: 'Autonomous Equities Trading Bot', desc: 'A systematic equities trading bot that executes trades autonomously, with a backtested Sharpe of 1.15.' },
+    { title: 'Quantitative Stock Screener', desc: 'A screener for quantitative research that generates alpha signals for the trading bot.' },
+  ];
+  const projCard = p => p.link
+    ? `<a class="proj" href="${p.link}" target="_blank" rel="noopener"><h4>${esc(p.title)}</h4><p>${esc(p.desc)}</p><div class="gh">View on GitHub ↗</div></a>`
+    : `<div class="proj"><h4>${esc(p.title)}</h4><p>${esc(p.desc)}</p></div>`;
+  document.getElementById('proj-current').innerHTML = currentProjects.map(projCard).join('');
+  document.getElementById('proj-past').innerHTML = pastProjects.map(projCard).join('');
 
   // ---- Books: edit here (rating optional) ----
   const shelves = [
