@@ -336,14 +336,13 @@
   // ---- Projects: edit here. Add link: 'https://github.com/...' to make a card clickable ----
   const currentProjects = [
     { title: 'CUDA Attention Kernel', desc: 'A custom GPU attention kernel written from scratch in CUDA, benchmarked against PyTorch and FlashAttention.' },
-    { title: 'Options Pricing & Greeks Engine', desc: 'A C++ engine for pricing options and computing Greeks using Black-Scholes, binomial trees, and Monte Carlo simulation.' },
   ];
   const pastProjects = [
     { title: 'Clinical Trial Matching', desc: 'Contributed to a system that matches cancer patients to clinical trials, deployed at 4 of the top 10 US cancer hospitals.' },
     { title: 'DocRAG', desc: 'An AI research assistant that answers questions over large document collections using retrieval-augmented generation.' },
     { title: 'Autonomous Incident Response', desc: 'An agent that detects, diagnoses, and responds to production failures without human intervention.' },
-    { title: 'Autonomous Equities Trading Bot', desc: 'A systematic equities trading bot that executes trades autonomously, with a backtested Sharpe of 1.15.' },
-    { title: 'Quantitative Stock Screener', desc: 'A screener for quantitative research that generates alpha signals for the trading bot.' },
+    { title: 'Systematic Equities Trading System', desc: 'A systematic equities trading system that executes trades autonomously, with a backtested Sharpe of 1.15.' },
+    { title: 'Quantitative Stock Screener', desc: 'A tool that pulls all the fundamentals I need to analyze a stock, like FCF, EBITDA, and earnings report data, into one place.' },
   ];
   const projCard = p => p.link
     ? `<a class="proj" href="${p.link}" target="_blank" rel="noopener"><h4>${esc(p.title)}</h4><p>${esc(p.desc)}</p><div class="gh">View on GitHub ↗</div></a>`
