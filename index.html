@@ -359,7 +359,8 @@
       ['The Yellow Birds', 'Kevin Powers', 6],
     ]],
     ['Geopolitics', [
-      ['Prisoners of Geography', 'Tim Marshall'],
+      ['Prisoners of Geography', 'Tim Marshall', 7],
+      ['The Rise and Fall of the Great Powers', 'Paul Kennedy'],
       ['Careless People', 'Sarah Wynn-Williams'],
       ['The Accidental Superpower', 'Peter Zeihan'],
       ['The New Map', 'Daniel Yergin'],
@@ -372,7 +373,9 @@
     ]],
     ['Markets + Trading', [
       ['Trading and Exchanges: Market Microstructure for Practitioners', 'Larry Harris'],
-      ['Inside the House of Money', 'Steven Drobny'],
+      ['Bond Markets, Analysis, and Strategies', 'Frank J. Fabozzi'],
+      ['Fixed Income Markets and Their Derivatives', 'Suresh Sundaresan'],
+      ['Inside the House of Money: Top Hedge Fund Managers Trading on the Global Stage', 'Steven Drobny'],
     ]],
     ['Memoir', [
       ['Serve to Win', 'Novak Djokovic'],
@@ -387,11 +390,11 @@
       ['Principles: Life and Work', 'Ray Dalio', 10],
       ['The Power of Habit', 'Charles Duhigg', 10],
       ['Die with Zero', 'Bill Perkins', 9],
+      ['The Courage to Be Disliked', 'Ichiro Kishimi & Fumitake Koga', 9],
       ['Atomic Habits', 'James Clear'],
       ['Deep Work', 'Cal Newport'],
       ["Don't Believe Everything You Think", 'Joseph Nguyen'],
       ['Principles for Success', 'Ray Dalio'],
-      ['The Courage to Be Disliked', 'Ichiro Kishimi & Fumitake Koga'],
       ['The Let Them Theory', 'Mel Robbins'],
       ['The Psychology of Money', 'Morgan Housel'],
     ]],
@@ -405,17 +408,18 @@
     'Memoir': '#8a6a40', 'Mind + Spirituality': '#5d4b6e', 'Productivity + Life Philosophy': '#6e3b3f', 'Thinking + Decision Making': '#34465c',
   };
   const allBooks = shelves.flatMap(([cat, list]) => list.map(([t, a, r]) => ({ t, a, r, cat })));
-  const cover = (b, i) => `
+  const favorites = ['Principles: Life and Work', 'The Power of Habit', 'The Bright Years', 'Die with Zero'];
+  const cover = (b, i, showRating = true) => `
     <div class="cover" style="background:${shelfColor[b.cat]};animation-delay:${Math.min(i, 16) * 35}ms">
       <div class="cat">${esc(b.cat)}</div>
       <div class="t">${esc(b.t)}</div>
-      <div class="bot"><div class="a">${esc(b.a)}</div>${b.r ? `<span class="r">${b.r}/10</span>` : ''}</div>
+      <div class="bot"><div class="a">${esc(b.a)}</div>${showRating && b.r ? `<span class="r">${b.r}/10</span>` : ''}</div>
     </div>`;
   const rated = allBooks.filter(b => b.r);
   document.getElementById('book-stats').innerHTML =
     `<div><b>${allBooks.length}</b>books</div><div><b>${shelves.length}</b>categories</div><div><b>${(rated.reduce((s, b) => s + b.r, 0) / rated.length).toFixed(1)}</b>avg rating</div>`;
   document.getElementById('fav-grid').innerHTML =
-    allBooks.filter(b => b.r >= 9).sort((x, y) => y.r - x.r).map(cover).join('');
+    favorites.map(t => allBooks.find(b => b.t === t)).map((b, i) => cover(b, i, false)).join('');
   const chipsEl = document.getElementById('chips'), gridEl = document.getElementById('book-grid');
   const cats = ['All', ...shelves.map(([c]) => c)];
   function renderShelf(cat) {
